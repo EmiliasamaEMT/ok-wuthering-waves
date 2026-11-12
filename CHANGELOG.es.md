@@ -2,6 +2,10 @@
 
 Primero se muestran las versiones de mc-helper. Se conserva el historial original desde v3.0.0.
 
+## v0.1.0-beta.3 (2026-11-12)
+
+- Versión preliminar de mantenimiento, sin nuevas funciones de la aplicación.
+
 ## v0.1.0-beta.2 (2026-11-12)
 
 - Los paquetes portátiles grandes se distribuyen en volúmenes 7z. Descarga todos en una carpeta y extrae desde .001.

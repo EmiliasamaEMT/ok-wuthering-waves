@@ -100,6 +100,15 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Enable Git long paths for the native packager
+        shell: pwsh
+        run: |
+          git config --global core.longpaths true
+          if ($LASTEXITCODE -ne 0) { throw "Unable to enable Git long paths" }
+          if ((git config --global --get core.longpaths) -ne 'true') {
+            throw "Git long paths are not enabled"
+          }
+
       - name: Check out source
         uses: actions/checkout@v4
         with:
