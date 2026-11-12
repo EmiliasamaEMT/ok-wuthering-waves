@@ -21,7 +21,7 @@
 [Windows Release](../../.github/workflows/build.yml) 在推送 `v*` 标签时运行三个阶段：
 
 1. **Validate**：检查版本标签格式，在 Windows / Python 3.12 下安装依赖并逐文件运行现有测试。
-2. **Build portable packages**：使用固定的 PyAppify Action 和启动器版本，从本仓库的目标标签准备两个 profile 的完整环境并打包；随后修正便携启动脚本，让手动启动时从实际 Git 检出版本读取版本号，并验证压缩包完整性。
+2. **Build portable packages**：使用固定的 PyAppify Action 和启动器版本，从本仓库的目标标签准备两个 profile 的完整环境并打包；随后修正便携启动脚本，让手动启动时从实际 Git 检出版本读取版本号，校验压缩包，并将可发布文件放入独立目录。
 3. **Publish**：使用本仓库的 `GITHUB_TOKEN` 创建 GitHub Release，上传便携包、启动器 ZIP 和启动器哈希。GitHub 自动生成的发布说明附在 Release 中。
 
 只有发布 job 需要 `contents: write`。流程不再同步原作者的 GitHub/CNB 更新仓库，也不需要原作者的同步、签名或 MirrorChyan 凭据。
@@ -32,6 +32,12 @@
 - `mc-helper-win32-Global-<版本>.7z`
 - `mc-helper-win32.zip`
 - `win32_sha256.txt`
+- `release-manifest.json`
+- `SHA256SUMS`
+
+[GitHub 要求每个 Release 文件小于 2 GiB](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)。完整便携包若达到该上限，会按 1900 MiB 分卷发布，例如 `mc-helper-win32-China-<版本>.7z.001`、`.7z.002`。下载同版本的全部分卷到同一目录，用 7-Zip 打开 `.001` 解压。低于上限的包继续使用单个 `.7z`。
+
+分卷保留原压缩包的全部字节，客户端仍按 Git 标签更新。`release-manifest.json` 记录原包哈希、总大小、卷顺序和各卷哈希；`SHA256SUMS` 校验实际下载文件。`win32_sha256.txt` 继续用于原生启动器 ZIP。发布前会核对分卷重组哈希，并对第一卷执行真实 7z 完整性检查。
 
 当前不构建安装程序、不执行签名。旧签名和分发工作流文件保留为仅手动触发、只输出停用说明的入口。`deploy.txt` 和 `.update_repo_gitignore` 保留用于兼容上游历史流程，当前发布不读取它们。
 

@@ -2,6 +2,11 @@
 
 mc-helper releases are listed first. Upstream history from v3.0.0 is retained below.
 
+## v0.1.0-beta.2 (2026-11-12)
+
+- Large portable packages are provided as 7z volumes. Download all volumes to one folder and extract from .001.
+- Added download checksums and an archive manifest for verifying release files.
+
 ## v0.1.0-beta.1 (2026-11-12)
 
 - First mc-helper preview release, with the interface name mc小帮手.

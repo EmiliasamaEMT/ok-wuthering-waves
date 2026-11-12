@@ -126,11 +126,14 @@ jobs:
       - name: Fix portable version discovery
         run: python .github/scripts/fix_portable_versions.py --dist "${{ steps.build.outputs.dist-path }}"
 
+      - name: Stage assets within GitHub's file size limit
+        run: python .github/scripts/stage_release_assets.py --dist "${{ steps.build.outputs.dist-path }}" --output release-assets
+
       - name: Stage release assets
         uses: actions/upload-artifact@v4
         with:
           name: release-assets
-          path: ${{ steps.build.outputs.dist-path }}/*
+          path: release-assets/*
           if-no-files-found: error
           retention-days: 7
 
@@ -159,13 +162,11 @@ jobs:
             mc小帮手（mc-helper）
 
             China 和 Global 便携包均从本仓库更新。
+            如便携包包含 .7z.001、.7z.002 等分卷，请下载同一版本的全部分卷到同一目录，并用 7-Zip 打开 .001 解压。
             [源码运行说明](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/docs/development/contributing.md)
           generate_release_notes: true
           draft: false
           prerelease: ${{ needs.validate.outputs.is_prerelease == 'true' }}
           fail_on_unmatched_files: true
           files: |
-            pyappify_dist/mc-helper-win32-China-*.7z
-            pyappify_dist/mc-helper-win32-Global-*.7z
-            pyappify_dist/mc-helper-win32.zip
-            pyappify_dist/win32_sha256.txt
+            pyappify_dist/*
