@@ -1,6 +1,12 @@
 # Changelog
 
-Release history starts at v3.0.0.
+mc-helper releases are listed first. Upstream history from v3.0.0 is retained below.
+
+## v0.1.0-beta.1 (2026-11-12)
+
+- First mc-helper preview release, with the interface name mc小帮手.
+- China and Global packages receive application updates from this fork.
+- Fixed the portable launcher reporting its original version after an update.
 
 ## v3.8.0-beta.1 (2026-11-12)
 

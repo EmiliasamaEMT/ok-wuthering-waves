@@ -1,6 +1,12 @@
 # Changelog
 
-El historial comienza en v3.0.0.
+Primero se muestran las versiones de mc-helper. Se conserva el historial original desde v3.0.0.
+
+## v0.1.0-beta.1 (2026-11-12)
+
+- Primera versión preliminar de mc-helper, con el nombre mc小帮手 en la interfaz.
+- Los paquetes China y Global reciben las actualizaciones de la aplicación desde este fork.
+- Corregido el lanzador portátil que mostraba la versión original después de una actualización.
 
 ## v3.8.0-beta.1 (2026-11-12)
 
