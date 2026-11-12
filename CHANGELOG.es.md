@@ -2,6 +2,10 @@
 
 Primero se muestran las versiones de mc-helper. Se conserva el historial original desde v3.0.0.
 
+## v0.1.0-beta.4 (2026-11-12)
+
+- Versión preliminar de mantenimiento, sin nuevas funciones de la aplicación.
+
 ## v0.1.0-beta.3 (2026-11-12)
 
 - Versión preliminar de mantenimiento, sin nuevas funciones de la aplicación.
