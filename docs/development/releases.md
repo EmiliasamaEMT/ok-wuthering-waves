@@ -37,7 +37,7 @@
 
 [GitHub 要求每个 Release 文件小于 2 GiB](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)。完整便携包若达到该上限，会按 1900 MiB 分卷发布，例如 `mc-helper-win32-China-<版本>.7z.001`、`.7z.002`。下载同版本的全部分卷到同一目录，用 7-Zip 打开 `.001` 解压。低于上限的包继续使用单个 `.7z`。
 
-分卷保留原压缩包的全部字节，客户端仍按 Git 标签更新。`release-manifest.json` 记录原包哈希、总大小、卷顺序和各卷哈希；`SHA256SUMS` 校验实际下载文件。`win32_sha256.txt` 继续用于原生启动器 ZIP。发布前会核对分卷重组哈希，并对第一卷执行真实 7z 完整性检查。
+分卷保留原压缩包的全部字节，客户端仍按 Git 标签更新。`release-manifest.json` 记录原包哈希、总大小、卷顺序和各卷哈希；`SHA256SUMS` 校验实际下载文件。`win32_sha256.txt` 校验 ZIP 内的原生启动器 EXE；ZIP 文件本身使用 `SHA256SUMS` 中对应的哈希。发布前会核对分卷重组哈希，并对第一卷执行真实 7z 完整性检查。
 
 Windows 打包 job 在准备应用环境前启用 runner 的 `core.longpaths`，避免 libgit2 在嵌套的打包路径中检出长资源文件名时失败。客户端也建议使用较短的安装路径，例如 `C:\mc-helper`；较深目录仍可能触发 Windows 或 Git 的路径限制。
 
@@ -62,3 +62,5 @@ Git 标签一旦推送，客户端就可能发现该版本；本工作流只能�
 旧配置中指向官方启动器 ZIP 的自动迁移条目已移除。应用代码和 Python 依赖仍可更新；后续若要自动升级原生启动器，需要配置自己发布的启动器包，或者安装新版完整包。
 
 Python 3.12 环境、完整测试及两个本地测试版本之间的便携更新验证记录见 [发布验证记录](release-validation.md)。正式发布前仍应验证原生启动器 ZIP、管理员权限提升和 GitHub 真实发布渠道；本地便携包的结果不代替这些检查。
+
+真实 GitHub 预发布、下载和产物检查的当前结果见 [GitHub 发行验证记录](github-release-validation.md)，其中单独列出了仍待完成的运行验收。
