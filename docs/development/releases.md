@@ -21,7 +21,7 @@
 [Windows Release](../../.github/workflows/build.yml) 在推送 `v*` 标签时运行三个阶段：
 
 1. **Validate**：检查版本标签格式，在 Windows / Python 3.12 下安装依赖并逐文件运行现有测试。
-2. **Build portable packages**：使用固定的 PyAppify Action 和启动器版本，从本仓库的目标标签准备两个 profile 的完整环境并打包。
+2. **Build portable packages**：使用固定的 PyAppify Action 和启动器版本，从本仓库的目标标签准备两个 profile 的完整环境并打包；随后修正便携启动脚本，让手动启动时从实际 Git 检出版本读取版本号，并验证压缩包完整性。
 3. **Publish**：使用本仓库的 `GITHUB_TOKEN` 创建 GitHub Release，上传便携包、启动器 ZIP 和启动器哈希。GitHub 自动生成的发布说明附在 Release 中。
 
 只有发布 job 需要 `contents: write`。流程不再同步原作者的 GitHub/CNB 更新仓库，也不需要原作者的同步、签名或 MirrorChyan 凭据。
@@ -51,4 +51,4 @@ Git 标签一旦推送，客户端就可能发现该版本；本工作流只能�
 
 旧配置中指向官方启动器 ZIP 的自动迁移条目已移除。应用代码和 Python 依赖仍可更新；后续若要自动升级原生启动器，需要配置自己发布的启动器包，或者安装新版完整包。
 
-首次正式发布前，还需要建立 Python 3.12 测试环境、运行完整测试，并验证两个测试版本之间的更新、配置保留和重启。本轮配置调整不代替这些运行验证。
+Python 3.12 环境、完整测试及两个本地测试版本之间的便携更新验证记录见 [发布验证记录](release-validation.md)。正式发布前仍应验证原生启动器 ZIP、管理员权限提升和 GitHub 真实发布渠道；本地便携包的结果不代替这些检查。

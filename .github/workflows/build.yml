@@ -118,6 +118,14 @@ jobs:
           package_zip: true
           package_zip_format: 7z
 
+      - name: Set up Python for portable launcher verification
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Fix portable version discovery
+        run: python .github/scripts/fix_portable_versions.py --dist "${{ steps.build.outputs.dist-path }}"
+
       - name: Stage release assets
         uses: actions/upload-artifact@v4
         with:
