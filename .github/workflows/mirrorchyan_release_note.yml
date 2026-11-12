@@ -1,22 +1,13 @@
-name: mirrorchyan_release_note
+# Kept as a retired entry point; mc-helper releases use build.yml.
+name: Legacy distribution notes (retired)
 
 on:
   workflow_dispatch:
-  release:
-    types: [edited]
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-  mirrorchyan_release_note:
-    runs-on: macos-latest
-
+  retired:
+    runs-on: ubuntu-latest
     steps:
-      - id: uploading
-        uses: MirrorChyan/release-note-action@v1
-        with:
-          mirrorchyan_rid: okww
-
-          upload_token: ${{ secrets.MirrorChyanUploadToken }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "This legacy workflow is retired. Use Windows Release."

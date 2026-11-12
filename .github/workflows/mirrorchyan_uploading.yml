@@ -1,23 +1,13 @@
-name: mirrorchyan_uploading
+# Kept as a retired entry point; mc-helper releases use build.yml.
+name: Legacy distribution upload (retired)
 
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-
-  mirrorchyan:
-    runs-on: macos-latest
+  retired:
+    runs-on: ubuntu-latest
     steps:
-      - uses: MirrorChyan/uploading-action@v1
-        with:
-          filetype: latest-release
-          filename: "mc-helper-win32-China-*.7z"
-          mirrorchyan_rid: okww
-
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          owner: ok-oldking
-          repo: ok-wuthering-waves
-          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+      - run: echo "This legacy workflow is retired. Use Windows Release."

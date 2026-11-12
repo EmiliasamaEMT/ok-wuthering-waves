@@ -87,7 +87,7 @@
 | [improve-team](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/improve-team/SKILL.md) | チームの評価に基づき、自動戦闘の改善を提案・検証します。 |
 | [ok-script-develop](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-script-develop/SKILL.md) | ok-script を使ってゲーム自動化機能を開発・検証します。 |
 | [ok-script-tasks](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-script-tasks/SKILL.md) | 自動化タスクを作成、変更、レビューします。 |
-| [mc-helper-characters](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-ww-characters/SKILL.md) | キャラクターの自動戦闘ロジックを開発、レビュー、テストします。 |
+| [ok-ww-characters](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-ww-characters/SKILL.md) | キャラクターの自動戦闘ロジックを開発、レビュー、テストします。 |
 | [ok-script-i18n](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-script-i18n/SKILL.md) | タスク UI の翻訳を追加、同期、コンパイルします。 |
 | [pr-review](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/pr-review/SKILL.md) | 本プロジェクトの GitHub PR をレビューまたはマージします。 |
 | [deploy](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/deploy/SKILL.md) | 完了した変更をコミットし、バージョンタグを作成して公開します。 |

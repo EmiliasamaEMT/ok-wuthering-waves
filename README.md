@@ -79,6 +79,8 @@
 
 开发环境、源码运行和贡献说明请参阅[贡献指南](docs/development/contributing.md)。
 
+本定制版的更新源、发布流程和版本标签规则请参阅[发布与更新说明](docs/development/releases.md)。
+
 ### AI 技能
 
 在支持项目技能的编码代理中打开本仓库，即可通过技能名称或自然语言提出相关请求。有关具体用法、准备工作和执行流程，请询问编码代理；技能的详细说明也可通过下面的链接查看。
@@ -91,7 +93,7 @@
 | [improve-team](.agents/skills/improve-team/SKILL.md) | 根据队伍评估结果提出并验证角色自动战斗改进。 |
 | [ok-script-develop](.agents/skills/ok-script-develop/SKILL.md) | 使用 ok-script 开发和验证游戏自动化功能。 |
 | [ok-script-tasks](.agents/skills/ok-script-tasks/SKILL.md) | 创建、修改或审查自动化任务。 |
-| [mc-helper-characters](.agents/skills/mc-helper-characters/SKILL.md) | 开发、审查和测试角色自动战斗逻辑。 |
+| [ok-ww-characters](.agents/skills/ok-ww-characters/SKILL.md) | 开发、审查和测试角色自动战斗逻辑。 |
 | [ok-script-i18n](.agents/skills/ok-script-i18n/SKILL.md) | 添加、同步和编译任务界面翻译。 |
 | [pr-review](.agents/skills/pr-review/SKILL.md) | 审查或合并本项目的 GitHub PR。 |
 | [deploy](.agents/skills/deploy/SKILL.md) | 提交已完成的修改，创建版本标签并发布。 |
