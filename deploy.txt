@@ -2,7 +2,7 @@ src
 ok
 config.py
 main.py
-ok-ww.exe
+mc-helper.exe
 readme
 README.md
 assets

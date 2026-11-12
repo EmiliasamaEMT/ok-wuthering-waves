@@ -323,7 +323,7 @@ jobs:
         if: env.BUILD_EXE == 'true' && env.SIGN_BUILD == 'true'
         with:
           name: china-installer-to-sign
-          path: pyappify_dist/ok-ww-win32-China-setup-*.exe
+          path: pyappify_dist/mc-helper-win32-China-setup-*.exe
           if-no-files-found: error
           retention-days: 1
 

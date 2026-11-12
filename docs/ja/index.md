@@ -1,8 +1,8 @@
 <div align="center">
   <h1 align="center">
-    <img src="https://raw.githubusercontent.com/ok-oldking/ok-wuthering-waves/master/icons/icon.png" width="200" alt="ok-ww logo"/>
+    <img src="https://raw.githubusercontent.com/ok-oldking/ok-wuthering-waves/master/icons/icon.png" width="200" alt="mc-helper logo"/>
     <br/>
-    ok-ww
+    mc-helper
   </h1> 
   
   <p>
@@ -58,10 +58,10 @@
     *   RTX HDR、RTX Dynamic Vibrance、AMD シャープニングなどの GPU フィルターは無効にすることをおすすめします。
     *   ゲームのデフォルトの明るさ設定を使用してください。
     *   ゲーム画面上に情報を表示するオーバーレイ（MSI Afterburner や Fraps などのフレームレート表示等）を無効にしてください。
-3.  **カスタムキー設定**: ゲーム内のデフォルトのキー設定を変更している場合は、`ok-ww` の設定でも同様に更新する必要があります。設定に記載されているキー設定のみがサポートされています。
-4.  **ソフトウェアのバージョン**: 最新バージョンの `ok-ww` を使用していることを確認してください。
+3.  **カスタムキー設定**: ゲーム内のデフォルトのキー設定を変更している場合は、`mc-helper` の設定でも同様に更新する必要があります。設定に記載されているキー設定のみがサポートされています。
+4.  **ソフトウェアのバージョン**: 最新バージョンの `mc-helper` を使用していることを確認してください。
 5.  **ゲームのパフォーマンス**: ゲームが **60 FPS** で安定して動作することを確認してください。フレームレートが不安定な場合は、ゲームのグラフィック品質や解像度を下げてみてください。
-6.  **ゲームの接続切断**: `ok-ww` の設定で「起動後にランチャーを閉じる」を有効にし、ランチャープロセスが実行されていないことを確認するか、ソースコードから `ok-ww` を実行してください。
+6.  **ゲームの接続切断**: `mc-helper` の設定で「起動後にランチャーを閉じる」を有効にし、ランチャープロセスが実行されていないことを確認するか、ソースコードから `mc-helper` を実行してください。
 7.  **OpenVINO エラー**: NPU 搭載の Intel CPU で `0x000005` エラーが発生した場合は、Intel の最新 NPU ドライバーに更新してください。
 8.  **サポートを受ける**: 上記の手順で問題が解決しない場合は、コミュニティチャンネルを通じて詳細なバグレポートを提出してください。
 9.  **自動ダッシュを無効にする**: ゲーム設定で自動ダッシュを無効にしてください。
@@ -87,7 +87,7 @@
 | [improve-team](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/improve-team/SKILL.md) | チームの評価に基づき、自動戦闘の改善を提案・検証します。 |
 | [ok-script-develop](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-script-develop/SKILL.md) | ok-script を使ってゲーム自動化機能を開発・検証します。 |
 | [ok-script-tasks](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-script-tasks/SKILL.md) | 自動化タスクを作成、変更、レビューします。 |
-| [ok-ww-characters](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-ww-characters/SKILL.md) | キャラクターの自動戦闘ロジックを開発、レビュー、テストします。 |
+| [mc-helper-characters](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-ww-characters/SKILL.md) | キャラクターの自動戦闘ロジックを開発、レビュー、テストします。 |
 | [ok-script-i18n](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/ok-script-i18n/SKILL.md) | タスク UI の翻訳を追加、同期、コンパイルします。 |
 | [pr-review](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/pr-review/SKILL.md) | 本プロジェクトの GitHub PR をレビューまたはマージします。 |
 | [deploy](https://github.com/ok-oldking/ok-wuthering-waves/blob/master/.agents/skills/deploy/SKILL.md) | 完了した変更をコミットし、バージョンタグを作成して公開します。 |

@@ -1,8 +1,8 @@
-site_name: ok-ww
-site_description: Documentation for the ok-ww Wuthering Waves automation tool
+site_name: mc小帮手
+site_description: Documentation for the mc-helper Wuthering Waves automation tool
 site_url: https://ok-script.com/ok-ww/
-repo_url: https://github.com/ok-oldking/ok-wuthering-waves
-repo_name: ok-oldking/ok-wuthering-waves
+repo_url: https://github.com/EmiliasamaEMT/ok-wuthering-waves
+repo_name: mc-helper
 edit_uri: edit/master/docs/
 
 theme:

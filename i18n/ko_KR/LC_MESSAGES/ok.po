@@ -599,8 +599,8 @@ msgid "not enough stamina"
 msgstr "스태미나 부족"
 
 msgid ""
-"Click skill failed, check if the keybinding is correct in ok-ww settings!"
-msgstr "스킬 사용 실패, ok-ww 설정에서 키 바인딩이 올바른지 확인하세요!"
+"Click skill failed, check if the keybinding is correct in mc-helper settings!"
+msgstr "스킬 사용 실패, mc-helper 설정에서 키 바인딩이 올바른지 확인하세요!"
 
 msgid "Change Time to Night"
 msgstr "시간을 밤으로 변경"

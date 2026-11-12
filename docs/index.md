@@ -1,4 +1,4 @@
-# ok-ww documentation
+# mc-helper documentation
 
 Choose a language to get started.
 

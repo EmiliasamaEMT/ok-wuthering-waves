@@ -44,7 +44,7 @@ UPLOAD_TEAM_URL = "https://github.com/ok-oldking/ok-ww-char-code"
 WORKSHOP_TEAMS_ALL_URL = "https://cfokwwchar.ok-script.com/teams.json"
 WORKSHOP_TEAM_URL = "https://cfokwwchar.ok-script.com/teams/{slug}.json"
 WORKSHOP_ARCHIVE_HOSTS = {"cfokwwchar.ok-script.com", "raw.githubusercontent.com"}
-WORKSHOP_USER_AGENT = "ok-wuthering-waves"
+WORKSHOP_USER_AGENT = "mc-helper"
 logger = Logger.get_logger(__name__)
 
 # The team list marks each team with a haloed dot, and both switch buttons wear the
@@ -148,7 +148,7 @@ def translate_ui(message):
         if translated and translated != message:
             return translated
 
-    # Fallback dictionaries for all officially supported locales in ok-ww:
+    # Fallback dictionaries for all supported locales in mc-helper:
     # zh_CN (Simplified Chinese), zh_TW (Traditional Chinese), ja_JP (Japanese), ko_KR (Korean), es_ES (Spanish)
     _locale_fallbacks = {
         "zh_CN": {

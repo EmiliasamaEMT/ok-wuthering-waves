@@ -247,7 +247,7 @@ class TestCharacterCodeTab(unittest.TestCase):
         self.assertEqual([code["name"] for code in codes], ["newer", "older"])
         request = open_url.call_args.args[0]
         self.assertEqual(request.full_url, workshop_team_url((Aemeath, Augusta, Baizhi)))
-        self.assertEqual(request.get_header("User-agent"), "ok-wuthering-waves")
+        self.assertEqual(request.get_header("User-agent"), "mc-helper")
         self.assertEqual(open_url.call_args.kwargs, {"timeout": 15})
         log_info.assert_called_once_with(
             "char code workshop request: "
@@ -270,7 +270,7 @@ class TestCharacterCodeTab(unittest.TestCase):
         self.assertEqual(codes[0]["team"], "Test team")
         request = open_url.call_args.args[0]
         self.assertEqual(request.full_url, "https://cfokwwchar.ok-script.com/teams.json")
-        self.assertEqual(request.get_header("User-agent"), "ok-wuthering-waves")
+        self.assertEqual(request.get_header("User-agent"), "mc-helper")
         self.assertEqual(open_url.call_args.kwargs, {"timeout": 15})
 
     def test_workshop_archive_sends_app_user_agent(self):
@@ -296,7 +296,7 @@ class TestCharacterCodeTab(unittest.TestCase):
 
                     request = open_url.call_args.args[0]
                     self.assertEqual(request.full_url, expected_url)
-                    self.assertEqual(request.get_header("User-agent"), "ok-wuthering-waves")
+                    self.assertEqual(request.get_header("User-agent"), "mc-helper")
                     self.assertEqual(open_url.call_args.kwargs, {"timeout": 30})
                     preview.assert_called_once()
         finally:

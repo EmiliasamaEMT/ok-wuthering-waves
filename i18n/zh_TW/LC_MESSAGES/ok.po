@@ -597,8 +597,8 @@ msgid "not enough stamina"
 msgstr "體力不足"
 
 msgid ""
-"Click skill failed, check if the keybinding is correct in ok-ww settings!"
-msgstr "釋放技能失敗，請檢查ok-ww的按鍵設定是否正確！"
+"Click skill failed, check if the keybinding is correct in mc-helper settings!"
+msgstr "釋放技能失敗，請檢查mc小帮手的按鍵設定是否正確！"
 
 msgid "Change Time to Night"
 msgstr "自動切換時間至夜晚"

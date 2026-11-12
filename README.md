@@ -1,8 +1,8 @@
 <div align="center">
   <h1 align="center">
-    <img src="icons/icon.png" width="200" alt="ok-ww logo"/>
+    <img src="icons/icon.png" width="200" alt="mc-helper logo"/>
     <br/>
-    ok-ww
+    mc小帮手（mc-helper）
   </h1>
 
   <p>
@@ -22,7 +22,7 @@
 
 </div>
 
-<p align="center"><strong>官方网站：</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
+<p align="center"><strong>上游项目文档：</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
 
 ### [English](docs/en/index.md) | 中文说明 | [繁體中文](docs/zh-TW/index.md) | [日本語](docs/ja/index.md)
 
@@ -62,10 +62,10 @@
     *   建议关闭显卡滤镜，例如 RTX HDR、RTX 动态亮丽（RTX Dynamic Vibrance）、AMD 锐化等。
     *   使用游戏默认的亮度设置。
     *   关闭任何在游戏画面上显示信息的叠加层（如 MSI Afterburner、Fraps 等显示的帧率）。
-3.  **自定义按键**：如果您修改了游戏内的默认按键，请务必在 `ok-ww` 的设置中进行同步配置。仅支持设置中列出的按键。
-4.  **软件版本**：检查并确保您使用的是最新版本的 `ok-ww`。
+3.  **自定义按键**：如果您修改了游戏内的默认按键，请务必在 `mc-helper` 的设置中进行同步配置。仅支持设置中列出的按键。
+4.  **软件版本**：检查并确保您使用的是最新版本的 `mc-helper`。
 5.  **游戏性能**：请确保游戏能稳定在 **60 FPS** 运行。如果帧率不稳定，请尝试降低游戏画质或分辨率。
-6.  **游戏断线**：在 `ok-ww` 设置中开启“启动后关闭启动器”，确保启动器进程未在运行；或者使用源码运行。
+6.  **游戏断线**：在 `mc-helper` 设置中开启“启动后关闭启动器”，确保启动器进程未在运行；或者使用源码运行。
 7.  **OpenVINO 报错**：如果遇到 `0x000005` 报错，并且使用的是带 NPU 的 Intel CPU，请更新至 Intel 最新的 NPU 驱动。
 8.  **寻求帮助**：如果以上步骤都无法解决您的问题，请通过 Discord 提交详细的错误报告。
 9.  **关闭自动奔跑**：游戏设置里关闭自动奔跑。
@@ -91,7 +91,7 @@
 | [improve-team](.agents/skills/improve-team/SKILL.md) | 根据队伍评估结果提出并验证角色自动战斗改进。 |
 | [ok-script-develop](.agents/skills/ok-script-develop/SKILL.md) | 使用 ok-script 开发和验证游戏自动化功能。 |
 | [ok-script-tasks](.agents/skills/ok-script-tasks/SKILL.md) | 创建、修改或审查自动化任务。 |
-| [ok-ww-characters](.agents/skills/ok-ww-characters/SKILL.md) | 开发、审查和测试角色自动战斗逻辑。 |
+| [mc-helper-characters](.agents/skills/mc-helper-characters/SKILL.md) | 开发、审查和测试角色自动战斗逻辑。 |
 | [ok-script-i18n](.agents/skills/ok-script-i18n/SKILL.md) | 添加、同步和编译任务界面翻译。 |
 | [pr-review](.agents/skills/pr-review/SKILL.md) | 审查或合并本项目的 GitHub PR。 |
 | [deploy](.agents/skills/deploy/SKILL.md) | 提交已完成的修改，创建版本标签并发布。 |

@@ -238,12 +238,12 @@ config = {
     },
     'links': {
         'default': {
-            'github': 'https://github.com/ok-oldking/ok-wuthering-waves',
+            'github': 'https://github.com/EmiliasamaEMT/ok-wuthering-waves',
             'discord': 'https://discord.gg/vVyCatEBgA',
             'faq': 'https://ok-script.com/ok-ww/'
         },
         'zh_CN': {
-            'github': 'https://github.com/ok-oldking/ok-wuthering-waves',
+            'github': 'https://github.com/EmiliasamaEMT/ok-wuthering-waves',
             'discord': 'https://discord.gg/vVyCatEBgA',
             'faq': 'https://ok-script.com/ok-ww',
         },
@@ -260,11 +260,11 @@ config = {
     </p>
 """,
     'screenshots_folder': "screenshots",
-    'gui_title': 'OK-WW',  # Optional
+    'gui_title': 'mc小帮手',  # Optional
     'game_name': 'Wuthering Waves',
     # 'coco_feature_folder': get_path(__file__, 'assets/coco_feature'),  # required if using feature detection
-    'log_file': 'logs/ok-ww.log',  # Optional, auto rotating every day
-    'error_log_file': 'logs/ok-ww_error.log',
+    'log_file': 'logs/mc-helper.log',  # Optional, auto rotating every day
+    'error_log_file': 'logs/mc-helper_error.log',
     'launcher_log_file': 'logs/launcher.log',
     'launcher_error_log_file': 'logs/launcher_error.log',
     'version': version,
