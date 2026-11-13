@@ -2,6 +2,10 @@
 
 mc-helper releases are listed first. Upstream history from v3.0.0 is retained below.
 
+## v0.1.0-beta.7 (2026-11-13)
+
+- Maintenance preview; no additional application features were introduced.
+
 ## v0.1.0-beta.6 (2026-11-13)
 
 - Fixed unavailable update buttons and upgrade detection for prerelease versions when using the native launcher.
