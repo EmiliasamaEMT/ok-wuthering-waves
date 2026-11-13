@@ -12,6 +12,7 @@ fonts
 # Byte-compiled / optimized / DLL files
 .idea/
 __pycache__/
+.pytest_cache/
 issue*.json
 *.py[cod]
 *$py.class
