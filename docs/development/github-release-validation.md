@@ -6,6 +6,8 @@
 
 **结论：真实升级验收通过。** 以实际 beta.3 发行包为起点，两种模式均已更新至 beta.7；便携版自动重启与原 CMD 冷启动、原生版应用内更新与手动再次启动、预置用户配置保留均通过。beta.7 的云端构建、发布和下载校验也已完成。
 
+**正式版进展：** `v0.1.0` 已发布并成为 GitHub 最新正式版，构建和下载校验通过。beta.7 → v0.1.0 的本机窗口升级确认仍待用户操作；此前 beta.7 的运行验收结果不替代这次跨通道确认。
+
 ## 已发布版本
 
 - [v0.1.0-beta.3](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/tag/v0.1.0-beta.3)，应用提交 `a32aabef5629d5429821589dbd8f6ff90117fe48`。
@@ -13,8 +15,9 @@
 - [v0.1.0-beta.5](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/tag/v0.1.0-beta.5)，应用提交 `c6beb96dc706053b61709bcd12ac3da7e8360f4b`。
 - [v0.1.0-beta.6](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/tag/v0.1.0-beta.6)，应用提交 `f271820ba83cf8938112aca7d7872ea9b72dd069`。
 - [v0.1.0-beta.7](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/tag/v0.1.0-beta.7)，应用提交 `a5d8885261b4899ab49f2df5a95dc3047d6a803b`。
+- [v0.1.0](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/tag/v0.1.0)，首个正式版，应用提交 `5588126f4a3af799d0a439ffff897be0b2af8ec2`。
 
-上述版本的 GitHub Actions 均完成 Validate、Build portable packages、Publish。beta.3 和 beta.4 各自通过 **58 个测试模块、559 项测试，0 跳过**；beta.5 通过 **59 个测试模块、568 项测试，0 跳过**；beta.6 和 beta.7 各自通过 **60 个测试模块、576 项测试，0 跳过**。它们是预发布版本，尚未发布正式版。
+上述版本的 GitHub Actions 均完成 Validate、Build portable packages、Publish。beta.3 和 beta.4 各自通过 **58 个测试模块、559 项测试，0 跳过**；beta.5 通过 **59 个测试模块、568 项测试，0 跳过**；beta.6、beta.7 和 v0.1.0 各自通过 **60 个测试模块、576 项测试，0 跳过**。beta.3 至 beta.7 是预发布版本，v0.1.0 是首个正式版。
 
 | 标签 | 云端结果 | 原因或说明 |
 | --- | --- | --- |
@@ -25,10 +28,13 @@
 | `v0.1.0-beta.5` | 发布成功 | 修复 tag-only 仓库的增量协商；已完成便携版真实升级、自动重启与原 CMD 冷启动。 |
 | `v0.1.0-beta.6` | 发布成功 | 修复 Python 公共版本比较；原生版经官方升级接口迁移成功，配置保留并完成手动再次启动。 |
 | `v0.1.0-beta.7` | 发布成功 | 最终验收目标；China 便携版与原生版均已实际升级至此版本并验证重新启动。 |
+| `v0.1.0` | 发布成功，已设为 Latest | 采用 beta.7 的功能代码，正式版构建及下载校验通过；跨通道实机升级确认待用户操作。 |
 
 已有标签均保留原指向。首次审计时 fork 没有标签或 Release；当前版本标签均为自己的 `v0.1.0` 系列。
 
 构建记录：[beta.1](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43207473922)、[beta.2](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43211437089)、[beta.3](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43212654337)、[beta.4](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43222193398)、[beta.5](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43358778865)、[beta.6](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43365377382)、[beta.7](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43368024958)。
+
+正式版构建记录：[v0.1.0](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43403597881)。
 
 ## 发行产物
 
@@ -46,6 +52,8 @@
 | beta.6 Global | `1992294400` | `331233598` |
 | beta.7 China | `1992294400` | `331250714` |
 | beta.7 Global | `1992294400` | `331249967` |
+| v0.1.0 China | `1992294400` | `331260644` |
+| v0.1.0 Global | `1992294400` | `331260616` |
 
 每个 Release 共 8 项资产：四个便携分卷、原生启动器 ZIP、`release-manifest.json`、`SHA256SUMS`、`win32_sha256.txt`。同版本同 profile 的全部分卷应放在同一目录，从 `.001` 解压。
 
@@ -57,6 +65,7 @@
 
 - beta.3 China 两个分卷已从真实 GitHub Release 下载，分别校验 SHA-256，按顺序重组的哈希与原包 manifest 一致，并通过本机 7z 完整性检查及解压。
 - beta.3 至 beta.7 的 manifest、校验文件和原生启动器 ZIP 已实际下载并核对哈希；beta.4 至 beta.7 完整便携包由云端打包与完整性校验覆盖，本地未重复下载。beta.5、beta.6、beta.7 ZIP 内的 EXE 也与 `win32_sha256.txt` 核对一致。
+- v0.1.0 的 manifest、校验文件和原生启动器 ZIP 也已实际下载并核对，包括 ZIP 内的 EXE 校验值；正式版完整便携包继续由云端的完整打包、分卷重组哈希和 7z 检查覆盖。
 - 从 beta.3 的真实产物准备了独立的便携版和原生启动器测试目录。两者实际 Git HEAD 均为 beta.3 的提交，origin 均为 `https://github.com/EmiliasamaEMT/ok-wuthering-waves.git`，启动前均没有 beta.4 标签。beta.4 提交产生于 beta.3 打包完成之后。
 - 实际包内解释器为 **Python 3.12.10**；`ok-script==3.0.5b5`、`pyappify==1.0.20`。包内模块路径正确，`pip check` 通过，便携环境识别应用版本为 `v0.1.0-beta.3`。
 - 原生 EXE 产品名和文件描述均为 `mc-helper`，启动器自身版本为 `1.2.7`，权限清单为 `requireAdministrator`。启动器版本与应用版本分开维护。
@@ -146,7 +155,7 @@ beta.6 完整包生成后才推送后续测试标签 `v0.1.0-beta.7`（提交 `a
 
 固定的 PyAppify v1.2.7 原生 CLI 更新流程停止应用、安装版本并保存状态，未调用重新启动；本轮真实操作也由用户手动再次启动。便携模式则已通过自动重启验收，两者的生命周期结果分别记录。13:17 停止本轮只读观察进程时，保留了用户最后打开的便携 beta.7 窗口。
 
-先前的本地隔离 Git 更新实验见 [本地发布验证记录](release-validation.md)。真实运行验收已通过；发行包的云端结果见前文，正式版尚未发布。
+先前的本地隔离 Git 更新实验见 [本地发布验证记录](release-validation.md)。上述结论属于 beta.7 的真实运行验收；正式版发布与跨通道升级进展见下一节。
 
 ## v0.1.0 正式版准备与升级验证
 
@@ -158,4 +167,8 @@ beta.6 完整包生成后才推送后续测试标签 `v0.1.0-beta.7`（提交 `a
 
 两个真实测试目录的升级前基线已保存为 `build/qa/real-upgrade-before-stable.json`：HEAD 均为 beta.7 的 `a5d8885`，预置快捷键仍为 `f8`，配置 SHA-256 仍为 `66872d2d8015c13418960c6be1ce813ebddfe42cdd553f4ca0dd1f532f8d64de`。本轮继续以 China profile 完成普通更新列表、配置保留及重新启动验证；Global 保持云端构建与静态检查范围。
 
-正式版云端构建、发布资产校验和两个模式的 beta.7 → v0.1.0 真实升级结果，待执行后补录。
+正式版已通过 [GitHub Actions](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43403597881) 三个阶段，云端 **60 个模块、576 项测试，0 跳过**。GitHub API 已核实 `prerelease=false`、`draft=false`，`releases/latest` 指向 v0.1.0；正式标签对象为 `f4b537716c886e573cd16b9d3f7d48ead8d3c649`，指向 `5588126`，未改写任何已发布标签。
+
+本地已下载并核对正式版清单、校验文件和原生 ZIP；ZIP 大小为 **5037104 字节**，ZIP 内 EXE 与 `win32_sha256.txt` 一致。正式发行页说明已由审阅过的 `docs/releases/v0.1.0.md` 填充。证据：`build/real-download-v0.1.0/small-download-result.json`、`build/qa/stable-release-page.json`。
+
+截至此记录写入，两个 QA 目录仍处于 beta.7，尚未观察到本轮窗口升级操作。已提示用户通过便携 CMD 打开主窗口，在不勾选“检查测试版”的情况下选择 v0.1.0 更新；随后还需确认便携自动重启及冷启动、原生更新与手动再次启动，以及两者配置保留。
