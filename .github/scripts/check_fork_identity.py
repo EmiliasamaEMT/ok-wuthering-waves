@@ -10,7 +10,7 @@ import yaml
 
 
 REPOSITORY = "https://github.com/EmiliasamaEMT/ok-wuthering-waves"
-UPDATE_PINS = {"dulwich": "1.2.21", "pyappify": "1.0.20", "ok-script": "3.0.5b5"}
+UPDATE_PINS = {"dulwich": "1.2.21", "pyappify": "1.0.20", "ok-script": "3.0.5b7"}
 
 
 def check_identity(root):

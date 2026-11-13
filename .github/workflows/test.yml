@@ -48,8 +48,7 @@ jobs:
           echo PYTHONIOENCODING=utf-8 >> $GITHUB_ENV
 
       - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+        run: python .github/scripts/install_dependencies.py
 
       - name: Check fork release identity
         run: |
@@ -57,6 +56,9 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python .github/scripts/check_fork_identity.py
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Check installed dependency compatibility
+        run: python -m pip check
 
       - name: Run tests
         timeout-minutes: 20

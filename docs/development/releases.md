@@ -18,7 +18,7 @@
 
 ## 发布工作流
 
-[Windows Release](../../.github/workflows/build.yml) 在推送 `v*` 标签时运行三个阶段：
+[Windows Release](https://github.com/EmiliasamaEMT/ok-wuthering-waves/blob/dev/.github/workflows/build.yml) 在推送 `v*` 标签时运行三个阶段：
 
 1. **Validate**：检查版本标签格式，在 Windows / Python 3.12 下安装依赖并逐文件运行现有测试。
 2. **Build portable packages**：使用固定的 PyAppify Action 和启动器版本，从本仓库的目标标签准备两个 profile 的完整环境并打包；随后修正便携启动脚本，让手动启动时从实际 Git 检出版本读取版本号，校验压缩包，并将可发布文件放入独立目录。
