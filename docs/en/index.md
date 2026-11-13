@@ -18,7 +18,11 @@
   <a href="https://discord.gg/vVyCatEBgA"><img src="https://img.shields.io/discord/296598043787132928?color=5865f2&amp;label=%20Discord" alt="Discord" /></a>
 </div>
 
-<p align="center"><strong>Official site:</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
+**[Download the latest mc-helper release](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/latest)** · [Download and upgrade instructions](https://github.com/EmiliasamaEMT/ok-wuthering-waves/blob/dev/docs/releases/v0.1.0.md)
+
+This fork receives updates from its own repository. For a complete portable installation, download every volume of the selected profile and version, then extract `.001` with 7-Zip. The native launcher ZIP does not include the full runtime.
+
+<p align="center"><strong>Upstream documentation:</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
 
 ### English | [简体中文](../zh-CN/index.md) | [繁體中文](../zh-TW/index.md) | [日本語](../ja/index.md)
 

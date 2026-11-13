@@ -1,0 +1,132 @@
+name: Sync upstream
+run-name: Prepare upstream update for mc-helper
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+    inputs:
+      check_current:
+        description: Run checks even when upstream or the existing PR is unchanged
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mc-helper-upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.repository == 'EmiliasamaEMT/ok-wuthering-waves' && github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      base_sha: ${{ steps.sync.outputs.base_sha }}
+      head_sha: ${{ steps.sync.outputs.head_sha }}
+      pr_number: ${{ steps.sync.outputs.pr_number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+          persist-credentials: false
+          clean: false
+      - name: Prepare merge and draft PR using trusted orchestration only
+        id: sync
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECK_CURRENT: ${{ inputs.check_current && '1' || '0' }}
+          GIT_LFS_SKIP_SMUDGE: '1'
+        run: python3 .github/scripts/sync_upstream.py
+
+  checks:
+    needs: prepare
+    if: needs.prepare.outputs.head_sha != ''
+    runs-on: windows-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: candidate
+    env:
+      PYTHONIOENCODING: 'UTF-8'
+      PYTHONLEGACYWINDOWSSTDIO: 'UTF-8'
+      GITHUB_TOKEN: ''
+      GH_TOKEN: ''
+    steps:
+      - name: Check out identity guard from the exact trusted base
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.base_sha }}
+          path: trusted
+          sparse-checkout: |
+            /.github/scripts/check_fork_identity.py
+            /.github/requirements-maintenance.txt
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+          clean: false
+      - name: Check out exact candidate without write credentials
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.head_sha }}
+          path: candidate
+          lfs: true
+          persist-credentials: false
+          clean: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check fork identity before running candidate code
+        run: |
+          python -m pip install -r ../trusted/.github/requirements-maintenance.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python ../trusted/.github/scripts/check_fork_identity.py --root .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Install candidate dependencies
+        run: python .github/scripts/install_dependencies.py
+      - name: Run candidate tests
+        timeout-minutes: 25
+        run: |
+          $modules = 0
+          Get-ChildItem -LiteralPath tests -Filter '*.py' -File | ForEach-Object {
+            python -u run_test.py $_.FullName
+            if ($LASTEXITCODE -ne 0) { throw "Tests failed in $($_.Name)" }
+            $modules++
+          }
+          if ($modules -eq 0) { throw 'No test modules were found' }
+          "Passed $modules test modules" >> $env:GITHUB_STEP_SUMMARY
+
+  status:
+    needs: [prepare, checks]
+    if: always() && needs.prepare.outputs.pr_number != '' && needs.prepare.outputs.head_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    steps:
+      - name: Check out trusted status publisher only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.base_sha }}
+          sparse-checkout: /.github/scripts/sync_upstream.py
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+          clean: false
+      - name: Publish result for the tested candidate SHA
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_SHA: ${{ needs.prepare.outputs.base_sha }}
+          HEAD_SHA: ${{ needs.prepare.outputs.head_sha }}
+          PR_NUMBER: ${{ needs.prepare.outputs.pr_number }}
+          CHECKS_RESULT: ${{ needs.checks.result }}
+        run: python3 .github/scripts/sync_upstream.py status

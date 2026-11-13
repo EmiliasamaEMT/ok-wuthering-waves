@@ -18,7 +18,11 @@
   <a href="https://discord.gg/vVyCatEBgA"><img src="https://img.shields.io/discord/296598043787132928?color=5865f2&amp;label=%20Discord" alt="Discord" /></a>
 </div>
 
-<p align="center"><strong>官方網站：</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
+**[下載最新 mc-helper 正式版](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/latest)** · [下載與升級說明](https://github.com/EmiliasamaEMT/ok-wuthering-waves/blob/dev/docs/releases/v0.1.0.md)
+
+本定製版從本倉庫更新。首次使用請下載同一版本、同一地區包的全部分卷，再用 7-Zip 開啟 `.001` 解壓；原生啟動器 ZIP 不包含完整執行環境。
+
+<p align="center"><strong>上游專案文件：</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
 
 ### [English](../en/index.md) | [简体中文](../zh-CN/index.md) | 繁體中文 | [日本語](../ja/index.md)
 

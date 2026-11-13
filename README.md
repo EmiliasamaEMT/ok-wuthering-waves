@@ -14,6 +14,24 @@
   <p><i>通过 Windows 接口模拟用户进行操作，无内存读取、无文件修改</i></p>
 </div>
 
+## 下载与更新
+
+这是独立维护的 **mc小帮手（mc-helper）** 定制版，客户端更新源为本仓库。日常开发分支为 `dev`，客户端按本仓库的版本标签更新。
+
+**[下载最新正式版](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/latest)** · [v0.1.0 使用说明](docs/releases/v0.1.0.md) · [全部版本（含测试版）](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases)
+
+首次使用建议下载完整便携包：
+
+1. 下载同一版本、同一地区包的全部分卷，例如 `mc-helper-win32-China-v0.1.0.7z.001`、`.7z.002`，放在同一目录。China 和 Global 都从本仓库更新。
+2. 用 7-Zip 打开 `.001` 解压到较短目录，例如 `C:\mc-helper`。
+3. 双击解压目录内的 `mc-helper.cmd`，按 Windows 提示确认管理员权限。
+
+`mc-helper-win32.zip` 只包含原生启动器。完整运行环境请下载上述便携分卷；下载校验方法见 [发布与更新说明](docs/development/releases.md)。
+
+beta.7 可在主窗口「关于」页不勾选「检查测试版」，检查并更新至 `v0.1.0`。更早的测试版若能看到版本但无法点击更新，请先备份旧目录中的 `data/apps/mc-helper/working/configs`，下载新版完整包到新目录启动，并保留旧目录供配置迁移使用。详见 [旧测试版升级说明](docs/releases/v0.1.0.md#从测试版更新)。
+
+China 便携版已通过自动重启和关闭重开验收；原生启动模式已通过启动器升级及手动启动验收。两者配置保留正常。Global 已完成构建和静态检查，实机验证范围见 [验收记录](docs/development/github-release-validation.md)。
+
 <!-- Badges -->
 <div align="center">
 
@@ -80,6 +98,8 @@
 开发环境、源码运行和贡献说明请参阅[贡献指南](docs/development/contributing.md)。
 
 本定制版的更新源、发布流程和版本标签规则请参阅[发布与更新说明](docs/development/releases.md)。
+
+定时同步上游、审查同步 PR 和处理冲突的方法见[上游同步维护说明](docs/development/upstream-sync.md)。
 
 ### AI 技能
 

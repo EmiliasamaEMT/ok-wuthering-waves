@@ -18,7 +18,11 @@
   <a href="https://discord.gg/vVyCatEBgA"><img src="https://img.shields.io/discord/296598043787132928?color=5865f2&amp;label=%20Discord" alt="Discord" /></a>
 </div>
 
-<p align="center"><strong>公式サイト:</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
+**[mc-helper の最新正式版をダウンロード](https://github.com/EmiliasamaEMT/ok-wuthering-waves/releases/latest)** · [ダウンロードと更新手順](https://github.com/EmiliasamaEMT/ok-wuthering-waves/blob/dev/docs/releases/v0.1.0.md)
+
+この派生版は本リポジトリから更新されます。初回は同じバージョン・プロファイルの分割ファイルをすべてダウンロードし、7-Zip で `.001` を開いて展開してください。ネイティブランチャーの ZIP には実行環境全体は含まれません。
+
+<p align="center"><strong>上流プロジェクトのドキュメント:</strong> <a href="https://ok-script.com/ok-ww">https://ok-script.com/ok-ww</a></p>
 
 ### [English](../en/index.md) | [简体中文](../zh-CN/index.md) | [繁體中文](../zh-TW/index.md) | 日本語
 
