@@ -63,4 +63,4 @@ Git 标签一旦推送，客户端就可能发现该版本；本工作流只能�
 
 Python 3.12 环境、完整测试及两个本地测试版本之间的便携更新验证记录见 [发布验证记录](release-validation.md)。正式发布前仍应验证原生启动器 ZIP、管理员权限提升和 GitHub 真实发布渠道；本地便携包的结果不代替这些检查。
 
-真实 GitHub 预发布、下载和产物检查的当前结果见 [GitHub 发行验证记录](github-release-validation.md)，其中单独列出了仍待完成的运行验收。
+真实 GitHub 预发布、下载和产物检查的当前结果见 [GitHub 发行验证记录](github-release-validation.md)。China 两种启动模式已完成 beta.7 真实升级验收，后续正式版的发布与升级验证也在该记录中更新。正式版用户说明见 [v0.1.0](../releases/v0.1.0.md)。

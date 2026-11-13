@@ -2,6 +2,15 @@
 
 mc-helper releases are listed first. Upstream history from v3.0.0 is retained below.
 
+## v0.1.0 (2026-11-13)
+
+- First stable mc-helper release, with the interface name mc小帮手.
+- China and Global packages receive application updates from this fork.
+- Portable mode correctly detects upgraded versions on restart and reuses cached Git data when checking for updates.
+- Fixed prerelease version comparison in native mode so update buttons and upgrade detection work correctly.
+- Large portable packages use 7z volumes with download checksums. Download all volumes to one folder and extract from .001.
+- Portable mode restarts automatically after an update. Native mode requires starting the app again manually.
+
 ## v0.1.0-beta.7 (2026-11-13)
 
 - Maintenance preview; no additional application features were introduced.

@@ -2,6 +2,15 @@
 
 Primero se muestran las versiones de mc-helper. Se conserva el historial original desde v3.0.0.
 
+## v0.1.0 (2026-11-13)
+
+- Primera versión estable de mc-helper, con el nombre mc小帮手 en la interfaz.
+- Los paquetes China y Global reciben las actualizaciones de la aplicación desde este fork.
+- El modo portátil identifica correctamente la versión tras una actualización y reutiliza los datos Git locales al buscar actualizaciones.
+- Corregida la comparación de versiones preliminares en el modo nativo para que funcionen los botones de actualización y la detección de cambios de versión.
+- Los paquetes portátiles grandes se distribuyen en volúmenes 7z con sumas de comprobación. Descarga todos los volúmenes en una carpeta y extrae desde .001.
+- El modo portátil se reinicia automáticamente tras actualizar. En el modo nativo es necesario volver a iniciar la aplicación manualmente.
+
 ## v0.1.0-beta.7 (2026-11-13)
 
 - Versión preliminar de mantenimiento, sin nuevas funciones de la aplicación.
