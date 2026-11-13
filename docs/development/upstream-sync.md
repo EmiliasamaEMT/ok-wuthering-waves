@@ -76,3 +76,15 @@ b7 有以下上游界面和启动行为变化，应随 PR 审核：
 首次 PR 文档检查另发现继承的 Pages 配置步骤要求 fork 启用 GitHub Pages，导致 404。该步骤改为仅在非 PR 发布流程执行；PR 继续构建并检查文档，无需启用网站。
 
 随后严格构建发现旧分析文档与发布说明跨出文档目录的源码链接无法解析。相关链接改为 GitHub 源码链接：历史分析固定到当时的分析基线，当前发布说明指向 `dev`；保留严格检查规则。
+
+## 2026-11-14：审核合并与同步复验
+
+用户确认接受 b7 的界面和启动检查变化后，[PR #1](https://github.com/EmiliasamaEMT/ok-wuthering-waves/pull/1) 已使用合并提交进入 `dev`，提交为 `bc54f5b268f38cce8729c300982b6e09225f367e`。其两个父提交分别为原 `dev` 的 `a92ef53` 和已审核的 `c1bc17c`，合并树与已通过测试的 PR 提交一致；上游 `e04bfc3` 的祖先关系保留，本地 `dev` 也已同步。
+
+合并前重新核对了 [Windows 验证](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43474866313) 与 [严格文档构建](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43474866328)，均通过；Windows 为 **63 个模块、599 项测试、0 跳过**，并通过身份和 `pip check` 检查。
+
+另行记录：上游附带的 [AI 评论任务](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43476299752) 在激活时因缺少 `COPILOT_GITHUB_TOKEN` 失败，实际评论代理没有运行。该任务只允许 COMMENT，合并时的 `dev` 没有将其设为必需检查，也没有生效的分支规则。本次依据已完成的人工审核和上述功能、依赖、文档验证合并；保留该可选功能原配置，未将其记为审查通过。
+
+合并后在 `dev` 手动触发 [同步复验 43497317827](https://github.com/EmiliasamaEMT/ok-wuthering-waves/actions/runs/43497317827)，启用 `check_current=true`，整体结果为 **success**。准备阶段输出 `mode=up_to_date`，基线和被检查提交均为 `bc54f5b`，确认上游已合入，没有重复创建候选分支或 PR。可信基线身份检查通过，Windows 完整回归再次通过 **63 个模块、599 项测试、0 跳过**。因没有候选 PR 需要发布提交状态，最后的状态任务按条件跳过。
+
+复验结果及原始日志保存在本地 `build/qa/post-merge-sync-verified.json`、`post-merge-sync-prepare-complete.log` 和 `post-merge-sync-checks.log`。这些结果证明原合并冲突已解决，已审查的 b7 基线可以通过正式同步流程检查；可选 AI 评论任务的配置问题仍单独保留。
