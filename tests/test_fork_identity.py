@@ -56,7 +56,8 @@ class TestForkIdentity(unittest.TestCase):
         self.assertTrue(any("must run before" in error for error in identity.check_identity(self.root)))
 
     def test_dependency_change_requires_compatibility_review(self):
-        self.replace("requirements.txt", "ok-script[ocr,qt]==3.0.5b5", "ok-script[ocr,qt]==3.0.5b7")
+        current = identity.UPDATE_PINS["ok-script"]
+        self.replace("requirements.txt", f"ok-script[ocr,qt]=={current}", "ok-script[ocr,qt]==999.0.0")
         self.assertTrue(any("review update compatibility" in error for error in identity.check_identity(self.root)))
 
     def test_unsafe_yaml_is_rejected(self):
