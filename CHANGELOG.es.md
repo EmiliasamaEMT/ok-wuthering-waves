@@ -2,6 +2,10 @@
 
 Primero se muestran las versiones de mc-helper. Se conserva el historial original desde v3.0.0.
 
+## v0.1.0-beta.6 (2026-11-13)
+
+- Corregidos los botones de actualización desactivados y la detección de cambios entre versiones preliminares al usar el lanzador nativo.
+
 ## v0.1.0-beta.5 (2026-11-13)
 
 - Corregido un problema que volvía a descargar datos Git ya almacenados al buscar actualizaciones en los paquetes publicados.
