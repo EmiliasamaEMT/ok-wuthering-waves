@@ -2,6 +2,10 @@
 
 mc-helper releases are listed first. Upstream history from v3.0.0 is retained below.
 
+## v0.1.0-beta.5 (2026-11-13)
+
+- Fixed update checks redownloading already cached Git data in installations built from release tags.
+
 ## v0.1.0-beta.4 (2026-11-12)
 
 - Maintenance preview; no additional application features were introduced.
